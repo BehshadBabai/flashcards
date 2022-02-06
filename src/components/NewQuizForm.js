@@ -21,6 +21,14 @@ export default function NewQuizForm() {
     if (name.length === 0) {
       return;
     }
+    if (topicId===""){
+      alert('Please select a topic that you have previously created!');
+      return;
+    }
+    if(cards.length===0){
+      alert('Please add at least one flashcard to your quiz!');
+      return;
+    }
     const cardIds = [];
     let uniqueCardId = 0;
     cards.forEach((card,index)=>{
@@ -28,8 +36,6 @@ export default function NewQuizForm() {
       cardIds.push(uniqueCardId);
       dispatch(addCards({id: uniqueCardId,front: document.getElementById(`card-front-${index}`).value,back: document.getElementById(`card-back-${index}`).value}));
     });
-    // create the new cards here and add each card's id to cardIds
-    // create the new quiz here
     dispatch(
       addQuiz(
         {
