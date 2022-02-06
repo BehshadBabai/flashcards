@@ -1,26 +1,58 @@
-# To Run
+# 
+Flashcards
+> This project is a responsive react application that allows users to create topics, quizzes for those topics and flashcard for quizzes.
+> <!--Live demo [_here_]().  If you have the project hosted somewhere, include the link here. -->
 
-Run `npm start` in the project root and the app will be available on port 3000.
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Usage](#usage)
+* [Project Status](#project-status)
+* [Room for Improvement](#room-for-improvement)
+* [Acknowledgements](#acknowledgements)
+* [Contact](#contact) 
+<!-- * [License](#license) -->
 
-# State
 
-The app's state is totally normalized, with slices for topics, quizzes, and cards.
+## General Information
+This webpage is developed to showcase knowledge of developing responsive webpages using react and managing the state of the application using redux. The website allows users to create topics, quizzes for those topics and flashcard for quizzes. 
+<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
-# Routes
 
-- `/new-topic` – form to create a new topic
-- `/topics` – index of all topics
-- `/topics/:topicId` – page for an individual topic
-- `/new-quiz` – form to create a new quiz
-- `/quizzes` – index of all quizzes
-- `/quizzes/:quizId` – page for an individual quiz
+## Technologies Used
+-  npm - 8.2.0
+-  React.js
+-  Redux.js
+-  HTML - version html5
+-  CSS
+-  git - version 2.32.0.windows.2
+-  github
 
-# To Test
 
-1. Create topics
-2. Create quizzes
-3. Visit the page for an individual quiz and flip the cards over
+## Usage
+Allows users to create topics, quizzes for those topics and flashcard for quizzes.
 
-# Questions
 
-Is this appropriately scoped? Does it have too many features? Too few?
+## Project Status
+Project is: Complete
+
+
+## Room for Improvement
+- Disallowing empty flashcards.
+
+
+
+## Acknowledgements
+- Many thanks to Codecademy for including idea for this project on their full-stack development path 
+
+
+## Contact
+Created by Behshad Babai - feel free to contact me via email!
+my email: behshad.babai@gmail.com
+
+
+<!-- Optional -->
+<!-- ## License -->
+<!-- This project is open source and available under the [... License](). -->
+
+<!-- You don't have to include all sections - just the one's relevant to your project -->
