@@ -1,6 +1,6 @@
 # 
 Flashcards
-> This project is a responsive react application that allows users to create topics, quizzes for those topics and flashcard for quizzes.
+> This project is a responsive react application that allows users to create topics, quizzes for those topics and flashcards for quizzes.
 > <!--Live demo [_here_]().  If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
@@ -15,7 +15,7 @@ Flashcards
 
 
 ## General Information
-This webpage is developed to showcase knowledge of developing responsive webpages using react and managing the state of the application using redux. The website allows users to create topics, quizzes for those topics and flashcard for quizzes. 
+This webpage is developed to showcase knowledge of developing responsive webpages using react and managing the state of the application using redux. The website allows users to create topics, quizzes for those topics and flashcards for quizzes. 
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
 
@@ -30,7 +30,7 @@ This webpage is developed to showcase knowledge of developing responsive webpage
 
 
 ## Usage
-Allows users to create topics, quizzes for those topics and flashcard for quizzes.
+Allows users to create topics, quizzes for those topics and flashcards for quizzes.
 
 
 ## Project Status
@@ -43,7 +43,7 @@ Project is: Complete
 
 
 ## Acknowledgements
-- Many thanks to Codecademy for including idea for this project on their full-stack development path 
+- Many thanks to Codecademy for including the idea for this project on their full-stack development path 
 
 
 ## Contact
