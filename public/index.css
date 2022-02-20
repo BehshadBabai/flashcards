@@ -6,10 +6,11 @@
 html,
 body {
   margin: 0;
+  background-color: #f6ae09;
 }
 
 nav {
-  background: #b736ff;
+  background: #2f2f2f;
   display: flex;
   padding: 24px 36px;
 }
@@ -40,26 +41,26 @@ nav a.active {
 h1 {
   font-weight: bold;
   font-size: 20px;
-  color: #000000;
+  color: #2f2f2f;
   margin: 0;
 }
 
 h2 {
   font-weight: bold;
   font-size: 16px;
-  color: #000000;
+  color: #2f2f2f;
   margin: 0;
 }
 
 button,
 .button {
   background: #ffffff;
-  border: 1px solid #03a8d8;
+  border: 1px solid #2f2f2f;
   border-radius: 20px;
   text-align: center;
   font-weight: bold;
   font-size: 14px;
-  color: #03a8d8;
+  color: #2f2f2f;
   padding: 10px 21px;
   text-decoration: none;
 }
@@ -71,12 +72,12 @@ button,
 }
 
 .button:hover {
-  background-color: #03a8d8;
+  background-color: #2f2f2f;
   color: #ffffff;
 }
 
 button:hover {
-  background-color: #03a8d8;
+  background-color: #2f2f2f;
   color: #ffffff;
   cursor: pointer;
 }
@@ -129,7 +130,9 @@ section > h1 {
 }
 
 .remove-card-button {
-  color: #03a8d8;
+  color: #2f2f2f;
+  background-color: #f6ae09;
+  text-decoration: underline;
   text-align: right;
   font-weight: bold;
   font-size: 12px;
@@ -142,8 +145,8 @@ section > h1 {
 
 .remove-card-button:hover {
   cursor: pointer;
-  color: #03a8d8;
-  background-color: #ffffff;
+  color: #2f2f2f;
+  background-color: #f6ae09;
 }
 
 option {
@@ -226,7 +229,7 @@ li:not(:last-child) {
 }
 
 .card {
-  background: #b736ff;
+  background-color: #2f2f2f;
   border-radius: 4px;
   border: none;
   color: white;
