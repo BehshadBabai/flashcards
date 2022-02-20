@@ -71,15 +71,15 @@ button,
   width: 182px;
 }
 
-.button:hover {
+.create-new-topic-button:hover {
   background-color: #2f2f2f;
-  color: #ffffff;
+  color: white;
 }
 
 button:hover {
-  background-color: #2f2f2f;
-  color: #ffffff;
   cursor: pointer;
+  background-color: #2f2f2f;
+  color: white;
 }
 
 section {
@@ -235,4 +235,17 @@ li:not(:last-child) {
   color: white;
   padding: 73px 44px;
   width: 100%;
+}
+
+.card-flipped {
+  background-color: darkgreen;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 73px 44px;
+  width: 100%;
+}
+
+.card-flipped:hover {
+  background-color: darkgreen;
 }

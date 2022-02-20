@@ -4,7 +4,7 @@ import { selectAllQuizzes } from "./quizzesSlice";
 import { useSelector } from "react-redux";
 
 export default function Quizzes() {
-  const quizzes = useSelector(selectAllQuizzes); 
+  const quizzes = useSelector(selectAllQuizzes);
   return (
     <section className="center">
       <h1>Quizzes</h1>
@@ -15,7 +15,10 @@ export default function Quizzes() {
           </Link>
         ))}
       </ul>
-      <Link to={ROUTES.newQuizRoute()} className="button">
+      <Link
+        to={ROUTES.newQuizRoute()}
+        className="button create-new-topic-button"
+      >
         Create New Quiz
       </Link>
     </section>

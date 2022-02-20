@@ -5,7 +5,7 @@ import { selectAllQuizzes } from "./quizzesSlice";
 import { useSelector } from "react-redux";
 
 export default function Topic() {
-  const quizzes = useSelector(selectAllQuizzes); 
+  const quizzes = useSelector(selectAllQuizzes);
   let { quizId } = useParams();
   const quiz = quizzes[quizId];
 
@@ -17,7 +17,10 @@ export default function Topic() {
           <Card key={id} id={id} />
         ))}
       </ul>
-      <Link to={ROUTES.newQuizRoute()} className="button center">
+      <Link
+        to={ROUTES.newQuizRoute()}
+        className="button create-new-topic-button"
+      >
         Create a New Quiz
       </Link>
     </section>

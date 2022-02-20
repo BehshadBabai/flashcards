@@ -6,8 +6,8 @@ import { selectAllTopics } from "./topicsSlice";
 import { selectAllQuizzes } from "../quizzes/quizzesSlice";
 
 export default function Topic() {
-  const topics = useSelector(selectAllTopics); 
-  const quizzes = useSelector(selectAllQuizzes); 
+  const topics = useSelector(selectAllTopics);
+  const quizzes = useSelector(selectAllQuizzes);
   let { topicId } = useParams();
   const topic = topics[topicId];
   const quizzesForTopic = topic.quizIds.map((quizId) => quizzes[quizId]);
@@ -23,7 +23,7 @@ export default function Topic() {
           </li>
         ))}
       </ul>
-      <Link to="/quizzes/new" className="button center">
+      <Link to="/quizzes/new" className="button create-new-topic-button">
         Create a New Quiz
       </Link>
     </section>
