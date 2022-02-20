@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
-import ROUTES from "../app/routes";
-import { selectAllTopics } from "../features/topics/topicsSlice";
-import { addQuiz } from "../features/quizzes/quizzesSlice";
-import { addCards } from "../features/cards/cardsSlice";
-import { useDispatch } from "react-redux";
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+import ROUTES from '../app/routes';
+import { selectAllTopics } from '../features/topics/topicsSlice';
+import { addQuiz } from '../features/quizzes/quizzesSlice';
+import { addCards } from '../features/cards/cardsSlice';
+import { useDispatch } from 'react-redux';
 
 export default function NewQuizForm() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   const [cards, setCards] = useState([]);
-  const [topicId, setTopicId] = useState("");
+  const [topicId, setTopicId] = useState('');
   const history = useHistory();
   const topics = useSelector(selectAllTopics);
   const dispatch = useDispatch();
@@ -19,39 +19,51 @@ export default function NewQuizForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name.length === 0) {
+      alert('Please enter a name for your quiz before creating it!');
       return;
     }
-    if (topicId===""){
+    if (topicId === '') {
       alert('Please select a topic that you have previously created!');
       return;
     }
-    if(cards.length===0){
+    if (cards.length === 0) {
       alert('Please add at least one flashcard to your quiz!');
       return;
     }
+    console.log(cards);
+    cards.forEach((card) => {
+      if (card.front === '' || card.back === '') {
+        alert('No flashcard can contain an empty side!');
+        return;
+      }
+    });
     const cardIds = [];
     let uniqueCardId = 0;
-    cards.forEach((card,index)=>{
-      uniqueCardId = uuidv4(); 
+    cards.forEach((card, index) => {
+      uniqueCardId = uuidv4();
       cardIds.push(uniqueCardId);
-      dispatch(addCards({id: uniqueCardId,front: document.getElementById(`card-front-${index}`).value,back: document.getElementById(`card-back-${index}`).value}));
+      dispatch(
+        addCards({
+          id: uniqueCardId,
+          front: document.getElementById(`card-front-${index}`).value,
+          back: document.getElementById(`card-back-${index}`).value,
+        })
+      );
     });
     dispatch(
-      addQuiz(
-        {
-          id: uuidv4(),
-          name: document.getElementById('quiz-name').value,
-          topicId: document.getElementById('quiz-topic').value,
-          cardIds: cardIds
-        }
-        )
-      );
+      addQuiz({
+        id: uuidv4(),
+        name: document.getElementById('quiz-name').value,
+        topicId: document.getElementById('quiz-topic').value,
+        cardIds: cardIds,
+      })
+    );
     history.push(ROUTES.quizzesRoute());
   };
 
   const addCardInputs = (e) => {
     e.preventDefault();
-    setCards(cards.concat({ front: "", back: "" }));
+    setCards(cards.concat({ front: '', back: '' }));
   };
 
   const removeCard = (e, index) => {
@@ -70,17 +82,17 @@ export default function NewQuizForm() {
       <h1>Create a new quiz</h1>
       <form onSubmit={handleSubmit}>
         <input
-          id="quiz-name"
+          id='quiz-name'
           value={name}
           onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Quiz Title"
+          placeholder='Quiz Title'
         />
         <select
-          id="quiz-topic"
+          id='quiz-topic'
           onChange={(e) => setTopicId(e.currentTarget.value)}
-          placeholder="Topic"
+          placeholder='Topic'
         >
-          <option value="">Topic</option>
+          <option value=''>Topic</option>
           {Object.values(topics).map((topic) => (
             <option key={topic.data.id} value={topic.data.id}>
               {topic.data.name}
@@ -88,36 +100,36 @@ export default function NewQuizForm() {
           ))}
         </select>
         {cards.map((card, index) => (
-          <div key={index} className="card-front-back">
+          <div key={index} className='card-front-back'>
             <input
               id={`card-front-${index}`}
               value={cards[index].front}
               onChange={(e) =>
-                updateCardState(index, "front", e.currentTarget.value)
+                updateCardState(index, 'front', e.currentTarget.value)
               }
-              placeholder="Front"
+              placeholder='Front'
             />
 
             <input
               id={`card-back-${index}`}
               value={cards[index].back}
               onChange={(e) =>
-                updateCardState(index, "back", e.currentTarget.value)
+                updateCardState(index, 'back', e.currentTarget.value)
               }
-              placeholder="Back"
+              placeholder='Back'
             />
 
             <button
               onClick={(e) => removeCard(e, index)}
-              className="remove-card-button"
+              className='remove-card-button'
             >
               Remove Card
             </button>
           </div>
         ))}
-        <div className="actions-container">
+        <div className='actions-container'>
           <button onClick={addCardInputs}>Add a Card</button>
-          <button>Create Quiz</button>
+          <button type='submit'>Create Quiz</button>
         </div>
       </form>
     </section>

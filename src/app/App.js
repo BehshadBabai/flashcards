@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   NavLink,
   useRouteMatch,
-} from "react-router-dom";
-import NewQuizForm from "../components/NewQuizForm";
-import NewTopicForm from "../components/NewTopicForm";
-import Topics from "../features/topics/Topics";
-import Topic from "../features/topics/Topic";
-import Quiz from "../features/quizzes/Quiz";
-import Quizzes from "../features/quizzes/Quizzes";
-import ROUTES from "./routes";
+} from 'react-router-dom';
+import NewQuizForm from '../components/NewQuizForm';
+import NewTopicForm from '../components/NewTopicForm';
+import Topics from '../features/topics/Topics';
+import Topic from '../features/topics/Topic';
+import Quiz from '../features/quizzes/Quiz';
+import Quizzes from '../features/quizzes/Quizzes';
+import ROUTES from './routes';
 
 export default function App() {
   return (
@@ -20,17 +20,21 @@ export default function App() {
       <nav>
         <ul>
           <li>
-            <NavLink to={ROUTES.topicsRoute()} activeClassName="active">
+            <NavLink to={ROUTES.topicsRoute()} activeClassName='active'>
               Topics
             </NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.quizzesRoute()} activeClassName="active">
+            <NavLink
+              to={ROUTES.quizzesRoute()}
+              exact={true}
+              activeClassName='active'
+            >
               Quizzes
             </NavLink>
           </li>
           <li>
-            <NavLink to={ROUTES.newQuizRoute()} activeClassName="active">
+            <NavLink to={ROUTES.newQuizRoute()} activeClassName='active'>
               New Quiz
             </NavLink>
           </li>
@@ -38,10 +42,10 @@ export default function App() {
       </nav>
 
       <Switch>
-        <Route path="/topics">
+        <Route path='/topics'>
           <TopicsRoutes />
         </Route>
-        <Route path="/quizzes">
+        <Route path='/quizzes'>
           <QuizRoutes />
         </Route>
       </Switch>
