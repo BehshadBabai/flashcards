@@ -129,7 +129,7 @@ export default function NewQuizForm() {
         </div>
       ))}
       <div className='actions-container'>
-        <button onClick={addCardInputs}>Add a Card</button>
+        <button onClick={addCardInputs}>Add a Flashcard</button>
         <button onClick={handleSubmit}>Create Quiz</button>
       </div>
     </section>

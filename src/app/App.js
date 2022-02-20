@@ -13,12 +13,18 @@ import Topic from '../features/topics/Topic';
 import Quiz from '../features/quizzes/Quiz';
 import Quizzes from '../features/quizzes/Quizzes';
 import ROUTES from './routes';
+import Home from '../features/home/home';
 
 export default function App() {
   return (
     <Router>
       <nav>
         <ul>
+          <li>
+            <NavLink to='/' exact={true} activeClassName='active'>
+              Home
+            </NavLink>
+          </li>
           <li>
             <NavLink to={ROUTES.topicsRoute()} activeClassName='active'>
               Topics
@@ -33,15 +39,13 @@ export default function App() {
               Quizzes
             </NavLink>
           </li>
-          <li>
-            <NavLink to={ROUTES.newQuizRoute()} activeClassName='active'>
-              New Quiz
-            </NavLink>
-          </li>
         </ul>
       </nav>
 
       <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
         <Route path='/topics'>
           <TopicsRoutes />
         </Route>

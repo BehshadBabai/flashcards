@@ -249,3 +249,19 @@ li:not(:last-child) {
 .card-flipped:hover {
   background-color: darkgreen;
 }
+
+textarea {
+  width: 70%;
+  height: auto;
+  color: #2f2f2f;
+  margin-left: 15%;
+  margin-top: 4%;
+  padding: 2%;
+  padding-bottom: 4%;
+  font-size: 1.3em;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}

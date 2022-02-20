@@ -11,7 +11,7 @@ export default function Topic() {
 
   return (
     <section>
-      <h1>{quiz.name}</h1>
+      <h1>{quiz.name} Flashcards</h1>
       <ul className="cards-list">
         {quiz.cardIds.map((id) => (
           <Card key={id} id={id} />
