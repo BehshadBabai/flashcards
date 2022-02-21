@@ -12,11 +12,17 @@ export default function Topic() {
   return (
     <section>
       <h1>{quiz.name} Flashcards</h1>
-      <ul className="cards-list">
-        {quiz.cardIds.map((id) => (
-          <Card key={id} id={id} />
-        ))}
-      </ul>
+      <div id="flashcards">
+        <button id="prev" disabled>
+          &lt;
+        </button>
+        <ul className="cards-list">
+          {quiz.cardIds.map((id) => (
+            <Card key={id} id={id} />
+          ))}
+        </ul>
+        <button id="next">&gt;</button>
+      </div>
       <Link
         to={ROUTES.newQuizRoute()}
         className="button create-new-topic-button"
