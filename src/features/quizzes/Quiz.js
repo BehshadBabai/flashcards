@@ -44,7 +44,9 @@ export default function Topic() {
           &gt;
         </button>
       </div>
-      <br />
+      <p style={{ textAlign: "center", fontWeight: "bold" }}>
+        {currentCardIndex + 1}/{quiz.cardIds.length}
+      </p>
       <Link
         to={ROUTES.newQuizRoute()}
         className="button create-new-topic-button"
