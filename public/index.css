@@ -223,11 +223,6 @@ li:not(:last-child) {
   color: #000000;
 }
 
-.cards-list {
-  list-style: none;
-  padding: 0;
-}
-
 .card {
   background-color: #2f2f2f;
   border-radius: 4px;
@@ -279,6 +274,9 @@ textarea:focus {
 .cards-list {
   margin-left: 10px;
   margin-right: 10px;
+  list-style: none;
+  padding: 0;
+  width: 70%;
 }
 
 #flashcards {
